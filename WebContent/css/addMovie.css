@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+section .add_movie {
+	width: 900px;
+	margin: 20px auto;
+}
+
+section .add_movie h2 {
+	margin: 20px 0;
+}
+
+section .add_movie input:focus, section .add_movie textarea:focus {
+	outline: none;
+}
+
+section .add_movie input[type="text"] {
+	width: 850px;
+	height: 30px;
+	padding: 0 10px;
+	margin-bottom: 10px;
+}
+section .add_movie input[type="file"] {
+	width: 850px;
+	height: 30px;
+	padding: 0 10px;
+	margin-bottom: 10px;
+}
+section .add_movie textarea {
+	width: 850px;
+	height: 300px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+input[type="submit"] {
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	float: right;
+	margin-top: 20px;
+	margin-right: 25px;
+	border: none;
+	cursor: pointer;
+}

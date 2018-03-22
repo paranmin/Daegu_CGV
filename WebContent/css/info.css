@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+section p.add_btn {
+	overflow: hidden;
+}
+section p.add_btn a {
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	float: right;
+}
+
+section .movieList {
+	width: 960px;
+	margin: 20px auto;
+}
+section .movieList div.movieItem {
+	float: left;
+	width: 228px;
+	margin: 10px 5px;
+	border: 1px solid #ccc;
+}
+section .movieList div.movieItem a {
+	color: #333;
+	font-size: 1.2em;
+}
+
+section .movieList div.movieItem img {
+	width: 225px;
+	height: 323px;
+	display: block;
+	margin:3px auto;
+}
+
+section .movieList div.movieItem span {
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+}

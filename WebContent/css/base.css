@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;	
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+#container {
+	width: 1024px;
+	margin: 0 auto;
+}
+
+header {
+	
+}
+
+header h1 {
+	background: url('../images/h1_cgv.png') no-repeat center;
+	height: 80px;
+}
+
+nav {
+	background-color: #fef8dc;
+}
+nav ul {
+	width: 70%;
+	margin: 0 auto;
+	overflow: hidden;
+	
+}
+
+nav ul li {
+	float:left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	width: 25%;
+}
+nav ul li a {
+	color: #000;
+	font-weight: bold;
+}
+section {
+	min-height: 650px;
+	margin: 10px 0;
+	overflow: hidden;
+}
+footer {
+	background-color: #fef8dc;
+	overflow: hidden;
+}
+footer p {
+	color: #999;
+	margin: 10px 0;
+	text-align: center;
+}
+
+a.btn, input[type="submit"] {
+	text-align: center;
+	color: #fff;
+	display: inline-block;
+	background-color: #428bca;
+	border-radius: 3px;
+}
