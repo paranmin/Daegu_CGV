@@ -16,7 +16,7 @@
 		<section>
 			<p class="add_btn"><a href="addMovie.jsp" class="btn">상영 영화 추가</a></p>
 			<%
-				if (movieManager.getList().size() == 0) {
+				if (movieManager.getList().size() > 0) {
 			%>
 				<jsp:include page="infoList.jsp" />
 			<%	

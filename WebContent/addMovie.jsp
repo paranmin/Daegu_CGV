@@ -16,6 +16,7 @@
 			<div class="add_movie">
 				<h2>영화 정보</h2>
 				<form action="processMovieInfo.jsp" method="post">
+					<input type="hidden" name="mode" value="add" />
 					<p>
 						<input type="text" name="title" placeholder="영화 제목" />
 					</p>

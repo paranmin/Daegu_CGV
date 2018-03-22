@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+section .movieInfo {
+	width: 900px;
+	margin: 20px auto;
+}
+
+section .movieInfo h2 {
+	text-align: center;
+	font-size: 2em;
+}
+
+section .movieInfo .infoArea {
+	margin: 20px 0;
+	overflow: hidden;
+}
+
+section .movieInfo .infoArea img {
+	display: block;
+	width: 300px;
+	float: left;
+	margin: 10px 20px 10px 10px;
+}
+
+section .movieInfo .infoArea h3 {
+	margin-top: 30px;
+	font-size: 1.5em;
+}
+
+section .movieInfo .infoArea .synopsis {
+	margin: 30px 0;
+	font-size: 1.2em;
+}
+section .movieInfo .infoArea p {
+	margin-top: 10px;
+}

@@ -1,53 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="movieManager" class="com.daegu_cgv.movie.MovieInfoManager" scope="application" />
+<jsp:useBean id="movieInfo" class="com.daegu_cgv.movie.MovieInfo" scope="page" />
 
 <div class="movieList">
-	<div class="movieItem">
-		<a href="">
-			<img src="images/busan.jpg" alt="" />
-			<span class="title">부산행</span>
-		</a>
-	</div>
-	<div class="movieItem">
-		<a href="">
-			<img src="images/goodbye.jpg" alt="" />
-			<span class="title">굿바이 싱글</span>
-		</a>
-	</div>
-	<div class="movieItem">
-		<a href="">
-			<img src="images/bongi.jpg" alt="" />
-			<span class="title">봉이 김선달</span>
-		</a>
-	</div>
-	<div class="movieItem">
-		<a href="">
-			<img src="images/day_500.jpg" alt="" />
-			<span class="title">500일의 썸머</span>
-		</a>
-	</div>
-	<div class="movieItem">
-		<a href="">
-			<img src="images/devol.jpg" alt="" />
-			<span class="title">데볼리션</span>
-		</a>
-	</div>
-	<div class="movieItem">
-		<a href="">
-			<img src="images/dori.jpg" alt="" />
-			<span class="title">도리를 찾아서</span>
-		</a>
-	</div>
-	<div class="movieItem">
-		<a href="">
-			<img src="images/light.jpg" alt="" />
-			<span class="title">환상의 빛</span>
-		</a>
-	</div>
-	<!-- div class="movieItem">
-		<a href="">
-			<img src="images/now.jpg" alt="" />
-			<span class="title">나우 유 씨 미 2</span>
-		</a>
-	</div -->
+<%
+	if (movieManager.getList().size() > 0) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < movieManager.getList().size(); i++) {
+			movieInfo = movieManager.get(i);
+			sb.append("<div class=\"movieItem\">");
+			sb.append(String.format("    <a href=\"viewMovieInfo.jsp?idx=%s\">", i));
+			sb.append(String.format("        <img src=\"images/%s\" alt=\"%2$s\" title=\"%2$s\" />", movieInfo.getCover(), movieInfo.getTitle()));
+			sb.append(String.format("        <span class=\"title\">%s</span>", movieInfo.getTitle()));
+			sb.append("    </a>");
+			sb.append("</div>");
+		}
+		out.println(sb.toString());
+	}
+%>
 </div>
