@@ -3,11 +3,15 @@ package com.daegu_cgv.movie;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.daegu_cgv.manager.Manager;
+
 public class MovieInfoManager implements Manager<MovieInfo> {
 	private List<MovieInfo> list;
 
 	public MovieInfoManager() {
-		this.list = new ArrayList<>();
+		if (this.list == null) {
+			this.list = new ArrayList<>();
+		}
 	}
 
 	@Override

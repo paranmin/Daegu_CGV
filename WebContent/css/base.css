@@ -70,3 +70,6 @@ a.btn, input[type="submit"] {
 	background-color: #428bca;
 	border-radius: 3px;
 }
+.center {
+	text-align: center;
+}

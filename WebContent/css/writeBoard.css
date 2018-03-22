@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+
+section .write_board {
+	width: 900px;
+	margin: 20px auto;
+}
+
+section .write_board h2 {
+	margin: 20px 0;
+}
+
+section .write_board input:focus, section .write_board textarea:focus {
+	outline: none;
+}
+
+section .write_board input[type="text"] {
+	width: 850px;
+	height: 30px;
+	padding: 0 10px;
+	margin-bottom: 10px;
+}
+section .write_board input[type="file"] {
+	width: 850px;
+	height: 30px;
+	padding: 0 10px;
+	margin-bottom: 10px;
+}
+section .write_board textarea {
+	width: 850px;
+	height: 300px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+input[type="submit"] {
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	float: right;
+	margin-top: 20px;
+	margin-right: 25px;
+	border: none;
+	cursor: pointer;
+}

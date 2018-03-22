@@ -1,4 +1,5 @@
-package com.daegu_cgv.movie;
+package com.daegu_cgv.manager;
+
 
 import java.util.List;
 
