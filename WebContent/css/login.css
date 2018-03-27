@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+fieldset {
+	width: 400px;
+	margin: 30px auto;
+	overflow: hidden;
+}
+label {
+	width: 100px;
+	display: inline-block;
+	float: left;
+	margin-left: 20px;
+}
+p.btn {
+	text-align: center;
+	margin: 20px auto;
+}
+p.btn input[type='submit'] {
+	padding: 5px 10px;
+	border: none;
+}

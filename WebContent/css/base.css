@@ -7,6 +7,7 @@
 
 a {
 	text-decoration: none;
+	color: #333;
 }
 
 ul {
@@ -26,8 +27,15 @@ header h1 {
 	background: url('../images/h1_cgv.png') no-repeat center;
 	height: 80px;
 }
-
+header p.login {
+	float: right;
+	margin-right: 20px;
+}
+header p span {
+	color: #ccc;
+}
 nav {
+	clear: both;
 	background-color: #fef8dc;
 }
 nav ul {
