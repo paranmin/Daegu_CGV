@@ -1,13 +1,18 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<fmt:setBundle basename="com.daegu_cgv.resource.message" var="message" />
+<fmt:message var="title" key="TITLE_SITE" bundle="${message}" />
+<fmt:message var="board_title" key="TITLE_BOARD" bundle="${message}" />
 <jsp:useBean id="boardManager" class="com.daegu_cgv.board.BoardManager" scope="application" />
 <jsp:useBean id="boardInfo" class="com.daegu_cgv.board.BoardInfo" scope="page" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>대구 CGV</title>
+<title>${title}</title>
 <link rel="stylesheet" href="css/base.css" media="all" />
 <link rel="stylesheet" href="css/board.css" media="all" />
 </head>
@@ -17,7 +22,7 @@
 		
 		<section>
 			<div class="board">
-				<h2>&lt;감상평 게시판&gt;</h2>
+				<h2>${board_title}</h2>
 				
 				<table>
 					<colgroup>
@@ -26,26 +31,28 @@
 						<col width="14%">
 					</colgroup>
 			<%
-				if (boardManager.getList().size() > 0) {
-					StringBuilder sb = new StringBuilder();
-					SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd hh:mm");
-					for (int i = 0; i < boardManager.getList().size(); i++) {
-						boardInfo = boardManager.get(i);
-						sb.append("<tr>");
-						sb.append(String.format("    <td class=\"content\">%s</td>", boardInfo.getContent()));
-						sb.append(String.format("    <td class=\"writer\">%s</td>", boardInfo.getWriter()));
-						sb.append(String.format("    <td class=\"time\">%s</td>", sdf.format(boardInfo.getWriteTime())));
-						sb.append("</tr>");
-					}
-					out.println(sb.toString());
-				} else {
-					out.println("<tr><td colspan=\"3\" class=\"center\">현재 등록된 감상평이 없습니다.</td></tr>");
-				}
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+				pageContext.setAttribute("sdf", sdf);
 			%>
+			<fmt:message var="msg_no_port" key="MSG_NO_POST" bundle="${message}" />
+			<fmt:message var="btn_del_all_post" key="BTN_DEL_POST" bundle="${message}" />
+			<fmt:message var="btb_add_post" key="BTN_ADD_POST" bundle="${message}" />
+			<c:if test="${boardManager.list.size() > 0}">
+				<c:forEach var="board" items="${boardManager.list}" varStatus="s">
+					<tr>
+						<td class="content">${board.content}</td>
+						<td class="writer">${board.writer}</td>
+						<td class="time">${sdf.format(board.writeTime)}</td>
+					</tr>
+				</c:forEach>
+			</c:if>
+			<c:if test="${boardManager.list.size() == 0}">
+					<tr><td colspan="3" class="center">${msg_no_port}</td></tr>
+			</c:if>
 				</table>
 				<div class="add_btn">
-					<a href="processBoardInfo.jsp?mode=removeAll" class="btn del">전체 삭제</a>
-					<a href="writeBoard.jsp" class="btn">글쓰기</a>
+					<a href="processBoardInfo.jsp?mode=removeAll" class="btn del">${btn_del_all_post}</a>
+					<a href="writeBoard.jsp" class="btn">${btb_add_post}</a>
 				</div>
 			</div>
 		</section>
